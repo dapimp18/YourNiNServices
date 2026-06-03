@@ -686,32 +686,28 @@
             // Upload to Google Drive in the background
             setUploadStatus('uploading', 'Uploading photo securely...');
 
-            const uploadReader = new FileReader();
-            uploadReader.onload = async function(e) {
-                const base64Data = e.target.result.split(',')[1];
-                try {
-                    const response = await fetch('/.netlify/functions/upload-to-drive', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            fileName: file.name,
-                            mimeType: file.type,
-                            base64Data: base64Data,
-                        }),
-                    });
-                    const result = await response.json();
-                    if (result.success) {
-                        document.getElementById('child-photo-url').value = result.driveUrl;
-                        photoUploaded = true;
-                        setUploadStatus('success', 'Photo uploaded successfully');
-                    } else {
-                        setUploadStatus('error', 'Upload failed — please re-select your photo');
-                    }
-                } catch (err) {
-                    setUploadStatus('error', 'Upload failed — please check your connection and try again');
+            // Upload directly to Cloudinary from the browser
+            const cloudinaryData = new FormData();
+            cloudinaryData.append('file', file);
+            cloudinaryData.append('upload_preset', 'qbph77bi');
+
+            fetch('https://api.cloudinary.com/v1_1/dsrnygccr/image/upload', {
+                method: 'POST',
+                body: cloudinaryData,
+            })
+            .then(res => res.json())
+            .then(result => {
+                if (result.secure_url) {
+                    document.getElementById('child-photo-url').value = result.secure_url;
+                    photoUploaded = true;
+                    setUploadStatus('success', 'Photo uploaded successfully');
+                } else {
+                    setUploadStatus('error', 'Upload failed — please re-select your photo');
                 }
-            };
-            uploadReader.readAsDataURL(file);
+            })
+            .catch(() => {
+                setUploadStatus('error', 'Upload failed — please check your connection and try again');
+            });
         }
 
         async function handleSubmit(event) {
