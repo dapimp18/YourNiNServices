@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yournin.services/sitemap.xml

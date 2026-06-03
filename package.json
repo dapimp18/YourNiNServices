@@ -1,0 +1,8 @@
+{
+  "name": "yournin-services",
+  "version": "1.0.0",
+  "description": "YourNiN Services - Nigerian Child NIN Registration",
+  "dependencies": {
+    "googleapis": "^140.0.0"
+  }
+}
