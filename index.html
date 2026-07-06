@@ -771,7 +771,7 @@
 
             var params = new URLSearchParams(window.location.search);
             if (params.get('access') === SECRET) {
-                // Set cookie for 30 days so they keep seeing £55
+                // Set cookie for 30 days so they keep seeing £60
                 var expires = new Date();
                 expires.setDate(expires.getDate() + 30);
                 document.cookie = COOKIE + '=true; expires=' + expires.toUTCString() + '; path=/';
@@ -782,11 +782,11 @@
                     var elements = ['price-hero', 'price-consent', 'price-button'];
                     elements.forEach(function (id) {
                         var el = document.getElementById(id);
-                        if (el) el.textContent = '£55';
+                        if (el) el.textContent = '£60';
                     });
 
                     var flag = document.getElementById('referral-flag');
-                    if (flag) flag.value = 'special-link (£55)';
+                    if (flag) flag.value = 'special-link (£60)';
                 });
             }
         })();
