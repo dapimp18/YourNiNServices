@@ -14,7 +14,7 @@
     <meta name="google-site-verification" content="17u1XV-nkHdFWlsG_LEp3PegSMyCPnZHFFopMiv1Z1w" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="UK-based service helping Nigerian parents register their child&#x27;s National Identification Number (NIN) remotely. No biometrics needed. Flat fee of £45. Fast, reliable and fully managed.">
+    <meta name="description" content="UK-based service helping Nigerian parents register their child&#x27;s National Identification Number (NIN) remotely. No biometrics needed. Flat fee of £55. Fast, reliable and fully managed.">
     <meta name="keywords" content="Nigerian NIN registration UK, child NIN enrolment UK, Nigerian NIN from abroad, NIN for children UK, Nigeria National Identification Number UK">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://yournin.services/">
@@ -22,7 +22,7 @@
     <!-- Open Graph (WhatsApp, Facebook, social sharing) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="YourNiNServices | Nigerian Child NIN Registration from the UK">
-    <meta property="og:description" content="Get your child&#x27;s Nigerian NIN without travelling to Nigeria. No biometrics needed. Fully managed service for UK-based parents. £45 flat fee.">
+    <meta property="og:description" content="Get your child&#x27;s Nigerian NIN without travelling to Nigeria. No biometrics needed. Fully managed service for UK-based parents. £55 flat fee.">
     <meta property="og:url" content="https://yournin.services/">
     <meta property="og:locale" content="en_GB">
     <meta property="og:image" content="https://yournin.services/social-card.png">
@@ -33,7 +33,7 @@
     <!-- Twitter/X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="YourNiNServices | Nigerian Child NIN Registration from the UK">
-    <meta name="twitter:description" content="Get your child's Nigerian NIN without travelling to Nigeria. No biometrics needed. £45 flat fee.">
+    <meta name="twitter:description" content="Get your child's Nigerian NIN without travelling to Nigeria. No biometrics needed. £55 flat fee.">
     <meta name="twitter:image" content="https://yournin.services/social-card.png">
 
     <!-- Favicon -->
@@ -56,7 +56,7 @@
       "knowsAbout": {
         "@type": "Service",
         "name": "Nigerian Child NIN Registration",
-        "description": "Remote NIN enrolment service for Nigerian children. We handle the full enrolment of your child's National Identification Number for a flat fee of £45.",
+        "description": "Remote NIN enrolment service for Nigerian children. We handle the full enrolment of your child's National Identification Number for a flat fee of £55.",
         "offers": {
           "@type": "Offer",
           "price": "45.00",
@@ -111,6 +111,8 @@
 
     </style>
 
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAnof6ZEJES88WAV2fPJJDueZCAY8p-5nAl2Icni4erX0gNxG5uol3xhIprMbABRHvN51wfv6BMOnreoc&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -229,7 +231,7 @@
 
                     <div class="mt-6 flex justify-center items-baseline gap-2">
 
-                        <span id="price-hero" class="text-6xl font-extrabold tracking-tight">£45</span>
+                        <span id="price-hero" class="text-6xl font-extrabold tracking-tight">£55</span>
 
                         <span class="text-emerald-100 font-medium">per child</span>
 
@@ -526,7 +528,7 @@
 
                             <p class="text-sm text-slate-700 leading-relaxed">
 
-                                I confirm all provided details are correct and authorise <strong>YourNiNServices</strong> to process this NIN Enrolment. I understand the <span id="price-consent">£45</span> fee is for checking and NIN Enrolment services.
+                                I confirm all provided details are correct and authorise <strong>YourNiNServices</strong> to process this NIN Enrolment. I understand the <span id="price-consent">£55</span> fee is for checking and NIN Enrolment services.
 
                             </p>
 
@@ -540,6 +542,7 @@
 
                     </button>
 
+
                 </form>
 
                 <div id="successMessage" class="hidden text-center py-16">
@@ -552,7 +555,17 @@
 
                     <h3 class="text-3xl font-bold text-slate-900 mb-3">Form Submitted</h3>
 
-                    <p class="text-slate-600 mb-10 text-lg">Thank you for your submission. A member of staff will be in touch with you shortly.</p>
+                    <p class="text-slate-600 mb-6 text-lg">Thank you for your submission. A member of staff will be in touch with you shortly.</p>
+
+                    <p class="text-slate-700 font-semibold mb-4">Please complete your payment below to confirm your enrolment:</p>
+
+                    <!-- PayPal Button — shown only after successful submission -->
+                    <div id="paypal-container-U9ABWQJMVDFBY" class="max-w-sm mx-auto mb-8"></div>
+                    <script>
+                        paypal.HostedButtons({
+                            hostedButtonId: "U9ABWQJMVDFBY",
+                        }).render("#paypal-container-U9ABWQJMVDFBY")
+                    </script>
 
                     <button onclick="resetForm()" class="text-emerald-600 font-bold hover:underline uppercase text-xs tracking-widest">Return to Form</button>
 
